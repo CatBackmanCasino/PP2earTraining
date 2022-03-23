@@ -1,23 +1,31 @@
 document.getElementById("start-button").addEventListener("click", runGame);
-
+document.getElementById("snare").addEventListener("click", guessSnare);
+document.getElementById("clap").addEventListener("click", guessClap);
 
 
 let snare = new Audio('assets/media/snare.mp3')
 let clap = new Audio('assets/media/clap.mp3')
+let instrumentPlayed = "";
+let playerGuess = "";
+
 /**
  * plays base note plus any other note.
  */
 function runGame() {
     let questionNumber = document.getElementById("question-number-value").innerText;
-    if(questionNumber < 20){
+    if(questionNumber <= 10){
         document.getElementById("question-number-value").innerText = ++questionNumber;
     } else {
         alert("Level Complete");
     }    
-    // console.log(questionNumber);
     firstNote()
 }
 
+
+
+/**
+ * this function playes the base note and waits for 2000ms to start
+ */
 function firstNote() {
     snare.play()
     const myTimeout = setTimeout(secondNote, 2000);
@@ -25,29 +33,35 @@ function firstNote() {
 
 function secondNote() {
     let randomNumber = Math.floor(Math.random() * 2);
-    console.log(randomNumber);
     if (randomNumber === 0){
     snare.play();
+    instrumentPlayed = "snare";
     } else {
-    clap.play()   
+    clap.play() 
+    instrumentPlayed = "clap";
     }
+    console.log(instrumentPlayed);
+   
 }
 
 
+function guessSnare(){
+    playerGuess = "snare";
+    checkAnswer()
+    }
 
-function checkAnswer() {
-
-
+function guessClap(){
+    playerGuess = "clap";
+    checkAnswer()
 }
 
-function incramentScore() {
-
-}
-
-function incramentQuestionNumber() {
-
-}
-
-function calculateEndScore() {
+function checkAnswer(){
+    if (instrumentPlayed === playerGuess){
+        alert("right answer");
+        runGame();
+    } else {
+        alert("uh oh, wrong answer")
+        runGame();
+    }
 
 }
