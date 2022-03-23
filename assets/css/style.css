@@ -47,6 +47,10 @@ h1{
 
 }
 
+.blink:hover{
+    color: white;
+}
+
 
 #answer-alternatives{
     background-color: rgba(250, 235, 215, 0.486);
