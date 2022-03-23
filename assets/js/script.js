@@ -41,7 +41,7 @@ let questionNumber = document.getElementById("question-number-value").innerText;
  */
 function runGame() {
    
-    if (questionNumber < 2) {
+    if (questionNumber < 10) {
         document.getElementById("question-number-value").innerText = ++questionNumber;
         firstNote();
     } else {
@@ -67,7 +67,7 @@ function firstNote() {
  */
 function secondNote() {
 
-    let randomNumber = Math.floor(Math.random() * 2);
+    let randomNumber = Math.floor(Math.random() * 7);
     if (randomNumber === 0) {
         c1.play();
         instrumentPlayed = "c1";
@@ -95,6 +95,10 @@ function secondNote() {
     if (randomNumber === 6) {
         b1.play();
         instrumentPlayed = "b1";
+    } 
+    if (randomNumber === 7) {
+        b1.play();
+        instrumentPlayed = "c2";
     } 
     console.log(randomNumber);
 
@@ -143,10 +147,8 @@ function guessC2() {
 
 function checkAnswer() {
     if (instrumentPlayed === playerGuess) {
-        alert("right answer");
         document.getElementById("right-answers-value").innerText = ++rightAnswers;
     } else {
-        alert("uh oh, wrong answer")
         document.getElementById("wrong-answers-value").innerText = ++wrongAnswers;
     }
     runGame()
