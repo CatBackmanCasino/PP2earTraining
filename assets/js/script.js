@@ -27,7 +27,7 @@ let questionNumber = document.getElementById("question-number-value").innerText;
  * plays base note plus any other note.
  */
 function runGame() {
-
+    document.getElementById("modal-container").style.display ="none";
     if (questionNumber < 10) {
         document.getElementById("question-number-value").innerText = ++questionNumber;
         firstNote();
@@ -144,7 +144,10 @@ function checkAnswer() {
 }
 
 function yourScore() {
-    alert(`Good Job! your score: ${rightAnswers} / ${questionNumber}`)
+    document.getElementById("modal-container").style.display ="flex";
+    document.getElementById("modal-content").innerText = `Good Job! \n your score: ${rightAnswers} / ${questionNumber}`
+    let playAgain = document.getElementById("play-again")
+    playAgain.addEventListener("click", runGame)
     resetScore()
 }
 
