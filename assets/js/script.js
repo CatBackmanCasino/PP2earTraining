@@ -4,13 +4,18 @@ document.getElementById("start-button").addEventListener("click", runGame);
 
 let snare = new Audio('assets/media/snare.mp3')
 let clap = new Audio('assets/media/clap.mp3')
-let sounds = [snare, clap]
 /**
  * plays base note plus any other note.
  */
 function runGame() {
+    let questionNumber = document.getElementById("question-number-value").innerText;
+    if(questionNumber < 20){
+        document.getElementById("question-number-value").innerText = ++questionNumber;
+    } else {
+        alert("Level Complete");
+    }    
+    // console.log(questionNumber);
     firstNote()
-
 }
 
 function firstNote() {
@@ -19,11 +24,12 @@ function firstNote() {
 }
 
 function secondNote() {
-    let randomNumber = Math.floor(Math.random() * 10);
-    if (randomNumber >= 5) {
-        snare.play();
+    let randomNumber = Math.floor(Math.random() * 2);
+    console.log(randomNumber);
+    if (randomNumber === 0){
+    snare.play();
     } else {
-        clap.play();
+    clap.play()   
     }
 }
 
