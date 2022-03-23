@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Palette+Mosaic&display=swap');
+
 * {
+    font-family: "montserrat";
     margin: 0;
     padding: 0;
 }
 
+body{
+    background-image: url(/assets/images/background.jpeg);
+}
 #game-canvas{
     
     margin-left: auto;
@@ -10,6 +16,7 @@
     width: 1000px;
     height: 700px;
     margin-top: 100px;
+    background-color: rgba(250, 235, 215, 0.308);
 }
 
 h1{
@@ -33,49 +40,44 @@ h1{
     height: 500px;
     width: 800px;
     margin: 50px auto 0px auto;
+
 }
 
 
 
 .gameitem{
     
-    font-size: 1rem;
-    color: blueviolet;
-    text-shadow: 0px 0px 20px white;
-    background-color: aliceblue;
-    border: 1px solid black;
+    font-size: 1.5rem;
+
 
 }
 
 .blink:hover{
-    color: white;
+    color: rgb(0, 255, 13);
 }
 
 
 #answer-alternatives{
-    background-color: rgba(250, 235, 215, 0.486);
-    color: white;
+
     grid-area: d;
     display: flex;
     width: 100%;
-    
-
 }
 
 .answer-buttons{
-    width: 50%;
-    color: black;
-    border: 1px solid black;
+    width: 100%;
+
+    font-size: 2rem;
+    position: relative;
+    justify-content: center;
+    vertical-align: middle;
+    padding-top: 4rem;
+    
 }
 
-.answer-buttons p{
-    color:brown;
-}
 
-#start-button{
-    font-size: 5rem;
-}
 
-.note{
-    font-size:5rem ;
+
+.icons{
+    font-size: 5rem ;
 }

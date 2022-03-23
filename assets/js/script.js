@@ -8,7 +8,6 @@ document.getElementById("a1").addEventListener("click", guessA1);
 document.getElementById("b1").addEventListener("click", guessB1);
 document.getElementById("c2").addEventListener("click", guessC2);
 
-
 let snare = new Audio('assets/media/snare.mp3')
 let clap = new Audio('assets/media/clap.mp3')
 
@@ -27,8 +26,6 @@ let g2 = new Audio('assets/media/g2.mp3')
 let a2 = new Audio('assets/media/a2.mp3')
 let b2 = new Audio('assets/media/b2.mp3')
 let c3 = new Audio('assets/media/c3.mp3')
-
-
 
 let instrumentPlayed = "";
 let playerGuess = "";
@@ -51,12 +48,12 @@ function runGame() {
 }
 
 /**
- * this function playes the base note and waits for 2000ms to start
+ * this function playes the base note and waits for 1300ms to start
  */
 function firstNote() {
 
     c1.play()
-    setTimeout(secondNote, 1200);
+    setTimeout(secondNote, 1300);
 
 
 }
@@ -67,7 +64,7 @@ function firstNote() {
  */
 function secondNote() {
 
-    let randomNumber = Math.floor(Math.random() * 7);
+    let randomNumber = Math.floor(Math.random() * 8);
     if (randomNumber === 0) {
         c1.play();
         instrumentPlayed = "c1";
@@ -97,7 +94,7 @@ function secondNote() {
         instrumentPlayed = "b1";
     } 
     if (randomNumber === 7) {
-        b1.play();
+        c2.play();
         instrumentPlayed = "c2";
     } 
     console.log(randomNumber);
