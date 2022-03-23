@@ -1,6 +1,13 @@
 document.getElementById("start-button").addEventListener("click", runGame);
-document.getElementById("snare").addEventListener("click", guessSnare);
-document.getElementById("clap").addEventListener("click", guessClap);
+document.getElementById("c1").addEventListener("click", guessC1);
+document.getElementById("d1").addEventListener("click", guessD1);
+document.getElementById("e1").addEventListener("click", guessE1);
+document.getElementById("f1").addEventListener("click", guessF1);
+document.getElementById("g1").addEventListener("click", guessG1);
+document.getElementById("a1").addEventListener("click", guessA1);
+document.getElementById("b1").addEventListener("click", guessB1);
+document.getElementById("c2").addEventListener("click", guessC2);
+
 
 let snare = new Audio('assets/media/snare.mp3')
 let clap = new Audio('assets/media/clap.mp3')
@@ -28,10 +35,12 @@ let playerGuess = "";
 let rightAnswers = document.getElementById("right-answers-value").innerText;
 let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
 let questionNumber = document.getElementById("question-number-value").innerText;
+
 /**
  * plays base note plus any other note.
  */
 function runGame() {
+   
     if (questionNumber < 2) {
         document.getElementById("question-number-value").innerText = ++questionNumber;
         firstNote();
@@ -47,14 +56,10 @@ function runGame() {
 function firstNote() {
 
     c1.play()
-    setTimeout(secondNote, 900);
+    setTimeout(secondNote, 1200);
 
 
 }
-
-
-
-
 
 
 /**
@@ -62,7 +67,7 @@ function firstNote() {
  */
 function secondNote() {
 
-    let randomNumber = Math.floor(Math.random() * 6);
+    let randomNumber = Math.floor(Math.random() * 2);
     if (randomNumber === 0) {
         c1.play();
         instrumentPlayed = "c1";
@@ -91,17 +96,48 @@ function secondNote() {
         b1.play();
         instrumentPlayed = "b1";
     } 
+    console.log(randomNumber);
 
 }
 
 
-function guessSnare() {
-    playerGuess = "snare";
+function guessC1() {
+    playerGuess = "c1";
     checkAnswer()
 }
 
-function guessClap() {
-    playerGuess = "clap";
+function guessD1() {
+    playerGuess = "d1";
+    checkAnswer()
+}
+
+function guessE1() {
+    playerGuess = "e1";
+    checkAnswer()
+}
+
+function guessF1() {
+    playerGuess = "f1";
+    checkAnswer()
+}
+
+function guessG1() {
+    playerGuess = "g1";
+    checkAnswer()
+}
+
+function guessA1() {
+    playerGuess = "a1";
+    checkAnswer()
+}
+
+function guessB1() {
+    playerGuess = "b1";
+    checkAnswer()
+}
+
+function guessC2() {
+    playerGuess = "c2";
     checkAnswer()
 }
 
