@@ -1,160 +1,116 @@
-document.getElementById("start-button").addEventListener("click", runGame);
-document.getElementById("c1").addEventListener("click", guessC1);
-document.getElementById("d1").addEventListener("click", guessD1);
-document.getElementById("e1").addEventListener("click", guessE1);
-document.getElementById("f1").addEventListener("click", guessF1);
-document.getElementById("g1").addEventListener("click", guessG1);
-document.getElementById("a1").addEventListener("click", guessA1);
-document.getElementById("b1").addEventListener("click", guessB1);
-document.getElementById("c2").addEventListener("click", guessC2);
 
-let c1 = new Audio('assets/media/c1.mp3')
-let d1 = new Audio('assets/media/d1.mp3')
-let e1 = new Audio('assets/media/e1.mp3')
-let f1 = new Audio('assets/media/f1.mp3')
-let g1 = new Audio('assets/media/g1.mp3')
-let a1 = new Audio('assets/media/a1.mp3')
-let b1 = new Audio('assets/media/b1.mp3')
-let c2 = new Audio('assets/media/c2.mp3')
+document.addEventListener("DOMContentLoaded", runGame())
 
-let interval = "";
-let playerGuess = "";
-let rightAnswers = document.getElementById("right-answers-value").innerText;
-let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
-let questionNumber = document.getElementById("question-number-value").innerText;
+let sounds = [
+    {
+        note: "c1",
+        interval: "first",
+        sample: "assets/media/c1.mp3"
+    },
+    {
+        note: "d1",
+        interval: "second",
+        sample: "assets/media/d1.mp3"
+    },
+    {
+        note: "e1",
+        interval: "second",
+        sample: "assets/media/e1.mp3"
+    },
+    {
+        note: "f1",
+        interval: "second",
+        sample: "assets/media/f1.mp3"
+    },
+    {
+        note: "g1",
+        interval: "second",
+        sample: "assets/media/g1.mp3"
+    },
+    {
+        note: "a1",
+        interval: "second",
+        sample: "assets/media/a1.mp3"
+    },
+    {
+        note: "b1",
+        interval: "second",
+        sample: "assets/media/b1.mp3"
+    },
+    {
+        note: "c2",
+        interval: "second",
+        sample: "assets/media/c2.mp3"
+    }
+]
+let interval = 0;
+let guess= "";
 
-/**
- * plays base note plus any other note.
- */
 function runGame() {
-    document.getElementById("modal-container").style.display ="none";
-    if (questionNumber < 10) {
-        document.getElementById("question-number-value").innerText = ++questionNumber;
-        firstNote();
-    } else {
-        yourScore()
-    }
-
+    document.getElementById("modal-container").style.display = "flex";
+    document.getElementById("modal-content").innerHTML = `<h1>Hi, and welcome to earTrainer 1</h1><p><br>This game is made to teach you how to hear intervals in music.<br>You will hear two notes and your job is to guess what the 2nd note is relative to the first one<br>Is it a 3rd or maybe a 7th?<br>Just press the interval you think is the right one.<br>Good Luck<br><p>
+    <br><button id="start-game">Start Game</button>`
+    let start = document.getElementById("start-game");
+    start.addEventListener("click", startGame);
 }
 
-/**
- * this function playes the base note and waits for 1300ms to start
- */
+function startGame() {
+    let questionNumber = document.getElementById("question-number-value").innerHTML;
+    if(questionNumber < 10){
+        document.getElementById("question-number-value").innerHTML = ++questionNumber;
+        document.getElementById("modal-container").style.display = "none";
+        setTimeout(firstNote, 1000)  
+    } else {
+        
+        document.getElementById("modal-container").style.display = "flex";
+        let score = document.getElementById("right-answers-value").innerHTML;
+        document.getElementById("modal-content").innerHTML = `<p>God job! your score: ${score}. <br>Do you want to play again?</p><button id="yes">Yes</button><button id="No">No</button>`
+        
+        let start = document.getElementById("yes");
+        start.addEventListener("click", reset);
+    }
+    function reset(){
+        document.getElementById("question-number-value").innerHTML = 0;
+        document.getElementById("right-answers-value").innerHTML = 0;
+        document.getElementById("wrong-answers-value").innerHTML = 0;
+    }  
+}
+
+
+
 function firstNote() {
-
-    c1.play()
-    setTimeout(secondNote, 1300);
+    let audio = new Audio(sounds[0].sample)
+    audio.play();
+    setTimeout(secondNote, 2000)
 }
 
-
-/**
- * plays a second note and returns what instrument  was played to variable instruments played
- */
-function secondNote() {
-
-    let randomNumber = Math.floor(Math.random() * 8);
-    if (randomNumber === 0) {
-        c1.play();
-        interval = "first";
-    }
-    if (randomNumber === 1) {
-        d1.play();
-        interval = "second";
-    }
-    if (randomNumber === 2) {
-        e1.play();
-        interval = "third";
-    }
-    if (randomNumber === 3) {
-        f1.play();
-        interval = "fourth";
-    }
-    if (randomNumber === 4) {
-        g1.play();
-        interval = "fifth";
-    }
-    if (randomNumber === 5) {
-        a1.play();
-        interval = "sixth";
-    }
-    if (randomNumber === 6) {
-        b1.play();
-        interval = "seventh";
-    }
-    if (randomNumber === 7) {
-        c2.play();
-        interval = "octave";
-    }
-    console.log(randomNumber);
-
+function secondNote(){
+    let randomNumber = Math.floor(Math.random()*7);
+    let audio = new Audio(sounds[randomNumber].sample);
+    audio.play();
+    interval = randomNumber;
+    answer()
 }
 
-
-function guessC1() {
-    playerGuess = "first";
-    checkAnswer()
+function answer(event){
+   let button = document.getElementsByClassName("answer-buttons");
+   addEventListener("click", checkAnswer)
+   document.onclick = e => {
+   guess =  e.target.innerText;  
+} 
 }
+ 
+function checkAnswer(){
+ if(guess == interval + 1){
+     startGame()
+    let rightAnswers = document.getElementById("right-answers-value").innerHTML;
+    document.getElementById("right-answers-value").innerHTML = ++rightAnswers;
+ } else {
+     startGame()
+     let wrongAnswers = document.getElementById("wrong-answers-value").innerHTML;
+     document.getElementById("wrong-answers-value").innerHTML = ++wrongAnswers;
+     
+ }
 
-function guessD1() {
-    playerGuess = "second";
-    checkAnswer()
-}
-
-function guessE1() {
-    playerGuess = "third";
-    checkAnswer()
-}
-
-function guessF1() {
-    playerGuess = "fourth";
-    checkAnswer()
-}
-
-function guessG1() {
-    playerGuess = "fifth";
-    checkAnswer()
-}
-
-function guessA1() {
-    playerGuess = "sixth";
-    checkAnswer()
-}
-
-function guessB1() {
-    playerGuess = "seventh";
-    checkAnswer()
-}
-
-function guessC2() {
-    playerGuess = "octave";
-    checkAnswer()
-}
-
-function checkAnswer() {
-    if (interval === playerGuess) {
-        document.getElementById("right-answers-value").innerText = ++rightAnswers;
-    } else {
-        document.getElementById("wrong-answers-value").innerText = ++wrongAnswers;
-        alert(`you answered ${playerGuess}. The right answer was ${interval}`)
-    }
-    runGame()
-
-}
-
-function yourScore() {
-    document.getElementById("modal-container").style.display ="flex";
-    document.getElementById("modal-content").innerText = `Good Job! \n your score: ${rightAnswers} / ${questionNumber}`
-    let playAgain = document.getElementById("play-again")
-    playAgain.addEventListener("click", runGame)
-    resetScore()
-}
-
-function resetScore() {
-    document.getElementById("right-answers-value").innerText = "0";
-    document.getElementById("wrong-answers-value").innerText = "0";
-    document.getElementById("question-number-value").innerText = "0";
-    rightAnswers = "0";
-    wrongAnswers = "0";
-    questionNumber = "0";
 
 }

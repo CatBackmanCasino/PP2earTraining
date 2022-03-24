@@ -32,11 +32,9 @@ body {
     margin: 100px;
 }
 
-#modal-container div{
-    display: block;
+#modal-content{
+    text-align: center;
 }
-
-
 
 h1 {
     text-align: center;
