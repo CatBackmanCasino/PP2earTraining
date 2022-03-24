@@ -44,8 +44,6 @@ function firstNote() {
 
     c1.play()
     setTimeout(secondNote, 1300);
-
-
 }
 
 
