@@ -61,7 +61,11 @@ let guess = "";
 function runGame() {
 
     document.getElementById("modal-container").style.display = "flex";
-    document.getElementById("modal-content").innerHTML = `<h1>Hi, and welcome to earTrainer 1</h1><p><br>This game is made to teach you how to hear intervals in music.<br>You will hear two notes and your job is to guess what the 2nd note is relative to the first one<br>Is it a 3rd or maybe a 7th?<br>Just press the interval you think is the right one.<br>Good Luck<br><p>
+    document.getElementById("modal-content").innerHTML = `<h1>Hi and welcome to EarTrainer 1!</h1><br>
+    This game is awesome if you want to improve your musical ear.<br>
+    Instructions:<br>
+    1. The game will play two notes.<br>
+    2. Guess the interval.<br>Good Luck<br><p>
     <br><button id="start-game-button">Start Game</button>`
     let start = document.getElementById("start-game-button");
     start.addEventListener("click", startGame);
@@ -73,20 +77,33 @@ function runGame() {
  * removes modal and starts the game
  */
 function startGame() {
-    
+
     document.getElementById("modal-container").style.display = "none";
     let questionNumber = document.getElementById("question-number-value").innerHTML;
-    if (questionNumber < 10) {
+    if (questionNumber < 3) {
         document.getElementById("question-number-value").innerHTML = ++questionNumber;
         setTimeout(firstNote, 500)
 
     } else {
+        scoreSummary()
+    }
+}
 
+function scoreSummary() {
+    let score = document.getElementById("right-answers-value").innerHTML;
+    let questions = document.getElementById("question-number-value").innerHTML;
+    let ratio = parseInt(score) / parseInt(questions);
+    console.log(ratio)
+
+    if (ratio < 0.8) {
         document.getElementById("modal-container").style.display = "flex";
-        let score = document.getElementById("right-answers-value").innerText;
-        document.getElementById("modal-content").innerHTML = `<p>God job! your score: ${(score)}. <br>Do you want to play again?</p><button id="yes">Yes</button>`
-        let yes = document.getElementById("yes");
-        yes.addEventListener("click", reset)
+        document.getElementById("modal-content").innerHTML = `<h1>${score}/${questions}</h1><br>You need 8/10 to reach the next level.<br>
+        <button id="try-again">Try Again</button>`
+        let tryAgain = document.getElementById("try-again")
+        tryAgain.addEventListener("click", reset)
+    } else {
+        document.getElementById("modal-container").style.display = "flex";
+        document.getElementById("modal-content").innerHTML = `<h1>${score}/${questions}</h1><br>Great Job. Next up, level 2`
     }
 }
 
@@ -118,11 +135,9 @@ function secondNote() {
  */
 
 function answer() {
-    
-    buttons = document.getElementsByClassName("buttons");
-    for (let button in buttons) {
-        addEventListener("click", storeAnswer)
-
+    let answerButtons = document.getElementsByClassName("answer-buttons");
+    for (button of answerButtons) {
+        button.addEventListener("click", storeAnswer)
     }
 }
 
@@ -132,7 +147,7 @@ function answer() {
  * 
  */
 
-function storeAnswer(event){
+function storeAnswer(event) {
     guess = event.target.dataset.answer
     checkAnswer()
 }
@@ -142,28 +157,30 @@ function storeAnswer(event){
  * checks if interval and guess are the same and increase score wrong/right
  */
 function checkAnswer() {
-    
+
     if (interval == guess) {
-    console.log("right Answer")
-    let rightAnswers = document.getElementById("right-answers-value").innerText;
-    document.getElementById("right-answers-value").innerText = ++rightAnswers
-    startGame()
-    
+        console.log("right Answer")
+        let rightAnswers = document.getElementById("right-answers-value").innerText;
+        document.getElementById("right-answers-value").innerText = ++rightAnswers
+        startGame()
+
     } else {
 
-    document.getElementById("modal-container").style.display = "flex";
-    let correctAnswer = sounds[interval].interval;
-    let userAnswer = sounds[guess].interval;
-    console.log(correctAnswer)
-    document.getElementById("modal-content").innerHTML = `Ooops, you answered ${userAnswer}. The correct answer was ${correctAnswer}.`;
-    
-    
-    let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
-    document.getElementById("wrong-answers-value").innerText = ++wrongAnswers
+        document.getElementById("modal-container").style.display = "flex";
+        let correctAnswer = sounds[interval].interval;
 
-   
+        let userAnswer = sounds[guess].interval;
+
+
+        let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
+        document.getElementById("wrong-answers-value").innerText = ++wrongAnswers
+
+        document.getElementById("modal-content").innerHTML = `Ooops, you answered ${userAnswer}. The correct answer was ${correctAnswer}.<br><br><button id="ok">OK!</button>`;
+        let okButton = document.getElementById("ok");
+        okButton.addEventListener("click", startGame)
+
     }
-    
+
 }
 
 
@@ -176,7 +193,7 @@ function reset() {
     document.getElementById("question-number-value").innerHTML = 0;
     document.getElementById("right-answers-value").innerHTML = 0;
     document.getElementById("wrong-answers-value").innerHTML = 0;
-    runGame()
+    startGame()
 }
 
 
