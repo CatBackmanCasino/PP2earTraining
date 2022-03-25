@@ -76,7 +76,7 @@ function startGame() {
     
     document.getElementById("modal-container").style.display = "none";
     let questionNumber = document.getElementById("question-number-value").innerHTML;
-    if (questionNumber < 5) {
+    if (questionNumber < 10) {
         document.getElementById("question-number-value").innerHTML = ++questionNumber;
         setTimeout(firstNote, 500)
 
@@ -148,6 +148,10 @@ function checkAnswer() {
     let rightAnswers = document.getElementById("right-answers-value").innerText;
     document.getElementById("right-answers-value").innerText = ++rightAnswers
     } else { 
+
+    document.getElementById("modal-container").style.display = "flex";
+    document.getElementById("modal-content").innerHTML = `Noooo wrong answer!!<button id="ok">OK</button>`
+
     console.log("wrong")
     let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
     document.getElementById("wrong-answers-value").innerText = ++wrongAnswers
