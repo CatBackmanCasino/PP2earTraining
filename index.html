@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EarTrainer</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>EarPractise</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
 </head>
 <body>
     <div id="game-canvas">
@@ -19,29 +20,25 @@
             <div class="gameitem blink icons"><p><i id="start-button" class="fa-solid fa-play"></i></p></div>
             <div id="sound-two" class="gameitem icons"> <p><i class="fa-solid fa-music"></i></p></div>
             <div id="answer-alternatives">
-                <div id="c1" class="answer-buttons blink"><p>1</p></div>
-                <div id="d1" class="answer-buttons blink"><p>2</p></div>
-                <div id="e1" class="answer-buttons blink"><p>3</p></div>
-                <div id="f1" class="answer-buttons blink"><p>4</p></div>
-                <div id="g1" class="answer-buttons blink"><p>5</p></div>
-                <div id="a1" class="answer-buttons blink"><p>6</p></div>
-                <div id="b1" class="answer-buttons blink"><p>7</p></div>
-                <div id="c2" class="answer-buttons blink"><p>8</p></div>
-
+                <div class="answer-buttons blink" ><p data-answer="1">1st</p></div>
+                <div class="answer-buttons blink" ><p data-answer="2">2nd</p></div>
+                <div class="answer-buttons blink" ><p data-answer="3">3rd</p></div>
+                <div class="answer-buttons blink" ><p data-answer="4">4th</p></div>
+                <div class="answer-buttons blink" ><p data-answer="5">5th</p></div>
+                <div class="answer-buttons blink" ><p data-answer="6">6th</p></div>
+                <div class="answer-buttons blink" ><p data-answer="7">7th</p></div>
+                <div class="answer-buttons blink" ><p data-answer="8">Octave</p></div>
             </div>
             <div id="right-answers" class="gameitem"><p>Correct Answers</p></div>
             <div id="question-number" class="gameitem"><p>Question number X</p></div>
             <div id="wrong-answers" class="gameitem"><p>Wrong Answers</p></div>
             <div class="gameitem" id="right-answers-value">0</div>
             <div class="gameitem" id="question-number-value">0</div>
-            <div class="gameitem" id="wrong-answers-value">0</div>
-            
-            
+            <div class="gameitem" id="wrong-answers-value">0</div>  
         </div>
     </div>
 
 </div>
-  
  <script src="assets/js/script.js"></script>  
   <script src="https://kit.fontawesome.com/51932b41cf.js" crossorigin="anonymous"></script>
 </body>
