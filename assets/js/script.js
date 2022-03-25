@@ -147,16 +147,23 @@ function checkAnswer() {
     console.log("right Answer")
     let rightAnswers = document.getElementById("right-answers-value").innerText;
     document.getElementById("right-answers-value").innerText = ++rightAnswers
-    } else { 
+    startGame()
+    
+    } else {
 
     document.getElementById("modal-container").style.display = "flex";
-    document.getElementById("modal-content").innerHTML = `Noooo wrong answer!!<button id="ok">OK</button>`
-
-    console.log("wrong")
+    let correctAnswer = sounds[interval].interval;
+    let userAnswer = sounds[guess].interval;
+    console.log(correctAnswer)
+    document.getElementById("modal-content").innerHTML = `Ooops, you answered ${userAnswer}. The correct answer was ${correctAnswer}.`;
+    
+    
     let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
     document.getElementById("wrong-answers-value").innerText = ++wrongAnswers
+
+   
     }
-    startGame()
+    
 }
 
 
