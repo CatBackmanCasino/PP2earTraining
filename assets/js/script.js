@@ -54,12 +54,12 @@ let guess = "";
 function runGame() {
 
     document.getElementById("modal-container").style.display = "flex";
-    document.getElementById("modal-content").innerHTML = `<h2>EarTrainer 1!</h2><br>
+    document.getElementById("modal-content").innerHTML = `<h2 aria-label="game name">EarTrainer 1!</h2><br>
     Test your musical skills in this awesome quiz-game.<br><br>
     Instructions:<br>
     1. The game will play two notes.<br>
     2. Guess the interval.<br>Good Luck<br><p>
-    <br><button id="start-game-button">Start Game</button>`
+    <br><button aria-label="start game" id="start-game-button">Start Game</button>`
     let start = document.getElementById("start-game-button");
     start.addEventListener("click", startGame);
 }
@@ -86,22 +86,22 @@ function scoreSummary() {
     console.log(ratio)
     if (ratio < 0.5) {
         document.getElementById("modal-container").style.display = "flex";
-        document.getElementById("modal-content").innerHTML = `<h2>You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><p>Starting out is never easy. Try again</p><br>
-        <button id="try-again">Try Again</button>`
+        document.getElementById("modal-content").innerHTML = `<h2 aria-label="your score">You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><p>Starting out is never easy. Try again</p><br>
+        <button id="try-again" aria-label="try again button">Try Again</button>`
         let tryAgain = document.getElementById("try-again")
         tryAgain.addEventListener("click", reset)
     }
     if (ratio > 0.5 && ratio < 0.8) {
         document.getElementById("modal-container").style.display = "flex";
-        document.getElementById("modal-content").innerHTML = `<h2>You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><p>Pretty decent!! you're gettin' good ;). Try again</p><br>
-        <button id="try-again">Try Again</button>`
+        document.getElementById("modal-content").innerHTML = `<h2 aria-label="your score">You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><p>Pretty decent!! you're gettin' good ;). Try again</p><br>
+        <button id="try-again" aria-label="try again">Try Again</button>`
         let tryAgain = document.getElementById("try-again")
         tryAgain.addEventListener("click", reset)
     }
     if (ratio > 0.8) {
         document.getElementById("modal-container").style.display = "flex";
-        document.getElementById("modal-content").innerHTML = `<h2>You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><br>Great Job!! You are really goooood =)<br>
-        <button id="try-again">Try Again</button>`
+        document.getElementById("modal-content").innerHTML = `<h2 aria-label="your score">You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><br>Great Job!! You are really goooood =)<br>
+        <button id="try-again" aria-label="try again">Try Again</button>`
         let tryAgain = document.getElementById("try-again")
         tryAgain.addEventListener("click", reset)
     }
@@ -175,7 +175,7 @@ function checkAnswer() {
         let userAnswer = sounds[guess].interval;
         let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
         document.getElementById("wrong-answers-value").innerText = ++wrongAnswers
-        document.getElementById("modal-content").innerHTML = `<h2>Ooops!</h2> You answered ${userAnswer}. The correct answer was ${correctAnswer}.<br><br><button id="ok">OK!</button>`;
+        document.getElementById("modal-content").innerHTML = `<h2 aria-label="wrong answer">Ooops!</h2> You answered ${userAnswer}. The correct answer was ${correctAnswer}.<br><br><button aria-label=" ok or continue" id="ok">OK!</button>`;
         let okButton = document.getElementById("ok");
         okButton.addEventListener("click", startGame)
 
