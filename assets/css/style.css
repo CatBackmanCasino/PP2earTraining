@@ -357,9 +357,7 @@ h2:hover {
 
 @media screen and (max-width: 500px) {
 
-    body {
-        overflow: hidden;
-    }
 
-
+   #game-canvas{
+max-width: 100%;   }
 }

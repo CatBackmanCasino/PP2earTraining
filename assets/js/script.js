@@ -113,7 +113,7 @@ function firstNote() {
     let audio = new Audio(sounds[0].sample)
     audio.play();
     document.getElementById("sound-one").style.animationPlayState = "running"
-    setTimeout(secondNote, 1600)
+    setTimeout(secondNote, 2000)
 }
 /**
  * plays the 2nd note (random)
