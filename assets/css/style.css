@@ -1,43 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Palette+Mosaic&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Palette+Mosaic&family=Permanent+Marker&family=Poppins:ital,wght@0,200;0,300;1,100;1,200;1,300&display=swap');
 * {
-    font-family: "montserrat";
+    font-family: "permanent marker", sans-serif;
     margin: 0;
     padding: 0;
 }
 
 body {
     background-image: url(/assets/images/background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #game-canvas {
-
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
-    height: 700px;
+    width:fit-content;
     margin-top: 100px;
     background-color: rgba(189, 189, 189, 0.308);
     border-radius: 10px;
-
 }
 
 #modal-container {
-    position: absolute;
     display: none;
-   
-    justify-content: center;
     background-color: rgb(192, 192, 192);
-    width: 500px;
-    margin: 200px 250px; 
     border-radius: 10px;
-    padding: 20px
+    padding: 20px;
+
+    /* Found this code on stackoverflow  https://stackoverflow.com/questions/39627549/how-to-center-modal-to-the-center-of-screen */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
 }
 
-#modal-content{
-   
-    font-size: 12px;
+#sound-one, #sound-two{
+    color: rgb(163, 163, 163);
+    transform: scale(1);
+    animation-name: wobble;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
 }
+
 button{
     display: block;
     font-size: 20px;
@@ -48,14 +55,26 @@ button{
    
 }
 
+#question-number-value::after{
+   color: black;
+   content: "/10";
+}
 
+#start-button::before{
+    color: black;
+    content: "Major Scale";
+ }
 
 h1 {
     text-align: center;
     color: rgb(0, 0, 0);
+    padding-top: 50px;
 
-    height: 100px;
-    line-height: 100px;
+}
+
+ h2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
 
 }
 
@@ -74,17 +93,13 @@ h1 {
 
 }
 
-
-
 .gameitem {
 
     font-size: 1.5rem;
-
-
 }
 
-.blink:hover {
-    color: rgb(0, 255, 13);
+.blink:hover, button:hover {
+    color: rgb(207, 207, 207);
 }
 
 
@@ -103,4 +118,21 @@ h1 {
 
 .icons {
     font-size: 5rem;
+}
+
+/* animations */
+@keyframes wobble {
+    0%{
+        transform: scale(1);
+        color: rgb(163, 163, 163);
+    }
+    50%{
+        transform: scale(1.1);
+        color: rgb(163, 36, 36);
+    }
+    100%{
+        transform: scale(1);
+        color: rgb(163, 163, 163);
+    }
+    
 }

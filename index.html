@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link rel="shortcut icon" href="#" />
-    
+
 </head>
+
 <body>
     <div id="game-canvas">
         <div id="modal-container">
@@ -18,30 +20,59 @@
         </div>
         <h1>EarTrainer ver 1.0</h1>
         <div id="game-area">
-            <div id="sound-one" class="gameitem icons"> <p><i class="fa-solid fa-music"></i></p></div>
-            <div class="gameitem blink icons"><p><i id="start-button" class="fa-solid fa-play"></i></p></div>
-            <div id="sound-two" class="gameitem icons"> <p><i class="fa-solid fa-music"></i></p></div>
-            <div id="answer-alternatives">
-                <div class="answer-buttons blink" ><p data-answer="0">1st</p></div>
-                <div class="answer-buttons blink" ><p data-answer="1">2nd</p></div>
-                <div class="answer-buttons blink" ><p data-answer="2">3rd</p></div>
-                <div class="answer-buttons blink" ><p data-answer="3">4th</p></div>
-                <div class="answer-buttons blink" ><p data-answer="4">5th</p></div>
-                <div class="answer-buttons blink" ><p data-answer="5">6th</p></div>
-                <div class="answer-buttons blink" ><p data-answer="6">7th</p></div>
-                <div class="answer-buttons blink" ><p data-answer="7">Octave</p></div>
+            <div id="sound-one" class="gameitem icons">
+                <p><i class="fa-solid fa-music"></i></p>
             </div>
-            <div id="right-answers" class="gameitem"><p>Correct Answers</p></div>
-            <div id="question-number" class="gameitem"><p>Question number X</p></div>
-            <div id="wrong-answers" class="gameitem"><p>Wrong Answers</p></div>
+            <div class="gameitem blink icons">
+                <p>Major</p>
+            </div>
+            <div id="sound-two" class="gameitem icons">
+                <p><i class="fa-solid fa-music"></i></p>
+            </div>
+            <div id="answer-alternatives">
+                <div class="answer-buttons blink">
+                    <p data-answer="0">1st</p>
+                </div>
+                <div class="answer-buttons blink">
+                    <p data-answer="1">2nd</p>
+                </div>
+                <div class="answer-buttons blink">
+                    <p data-answer="2">3rd</p>
+                </div>
+                <div class="answer-buttons blink">
+                    <p data-answer="3">4th</p>
+                </div>
+                <div class="answer-buttons blink">
+                    <p data-answer="4">5th</p>
+                </div>
+                <div class="answer-buttons blink">
+                    <p data-answer="5">6th</p>
+                </div>
+                <div class="answer-buttons blink">
+                    <p data-answer="6">7th</p>
+                </div>
+                <div class="answer-buttons blink">
+                    <p data-answer="7">Octave</p>
+                </div>
+            </div>
+            <div id="right-answers" class="gameitem">
+                <p>Correct Answers</p>
+            </div>
+            <div id="question-number" class="gameitem">
+                <p>Question number</p>
+            </div>
+            <div id="wrong-answers" class="gameitem">
+                <p>Wrong Answers</p>
+            </div>
             <div class="gameitem" id="right-answers-value">0</div>
             <div class="gameitem" id="question-number-value">0</div>
-            <div class="gameitem" id="wrong-answers-value">0</div>  
+            <div class="gameitem" id="wrong-answers-value">0</div>
         </div>
     </div>
 
-</div>
- <script src="assets/js/script.js"></script>  
-  <script src="https://kit.fontawesome.com/51932b41cf.js" crossorigin="anonymous"></script>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/51932b41cf.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

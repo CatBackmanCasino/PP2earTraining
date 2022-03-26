@@ -1,14 +1,10 @@
 /**
  * Waits for everything to load and then runs the game
  */
-
-
 document.addEventListener("DOMContentLoaded", runGame())
-
 /**
  * an array of objects containing url's to the samples
  */
-
 let sounds = [{
         note: "c1",
         interval: "first",
@@ -50,18 +46,15 @@ let sounds = [{
         sample: "assets/media/c2.mp3"
     }
 ]
-
 let interval = "";
 let guess = "";
-
 /**
  * the first state. A modal and a start game button
  */
-
 function runGame() {
 
     document.getElementById("modal-container").style.display = "flex";
-    document.getElementById("modal-content").innerHTML = `<h1>Hi and welcome to EarTrainer 1!</h1><br>
+    document.getElementById("modal-content").innerHTML = `<h2>Hi and welcome to EarTrainer 1!</h2><br>
     This game is awesome if you want to improve your musical ear.<br>
     Instructions:<br>
     1. The game will play two notes.<br>
@@ -70,17 +63,14 @@ function runGame() {
     let start = document.getElementById("start-game-button");
     start.addEventListener("click", startGame);
 }
-
-
-
 /**
  * removes modal and starts the game
  */
 function startGame() {
-
+    
     document.getElementById("modal-container").style.display = "none";
     let questionNumber = document.getElementById("question-number-value").innerHTML;
-    if (questionNumber < 3) {
+    if (questionNumber < 10) {
         document.getElementById("question-number-value").innerHTML = ++questionNumber;
         setTimeout(firstNote, 500)
 
@@ -88,71 +78,75 @@ function startGame() {
         scoreSummary()
     }
 }
-
 function scoreSummary() {
     let score = document.getElementById("right-answers-value").innerHTML;
     let questions = document.getElementById("question-number-value").innerHTML;
     let ratio = parseInt(score) / parseInt(questions);
     console.log(ratio)
-
-    if (ratio < 0.8) {
+    if (ratio < 0.5) {
         document.getElementById("modal-container").style.display = "flex";
-        document.getElementById("modal-content").innerHTML = `<h1>${score}/${questions}</h1><br>You need 8/10 to reach the next level.<br>
+        document.getElementById("modal-content").innerHTML = `<h2>You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><p>Starting out is never easy. Try again</p><br>
         <button id="try-again">Try Again</button>`
         let tryAgain = document.getElementById("try-again")
         tryAgain.addEventListener("click", reset)
-    } else {
+    }
+    if (ratio > 0.5 && ratio < 0.8) {
         document.getElementById("modal-container").style.display = "flex";
-        document.getElementById("modal-content").innerHTML = `<h1>${score}/${questions}</h1><br>Great Job. Next up, level 2`
+        document.getElementById("modal-content").innerHTML = `<h2>You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><p>Pretty decent!! you're gettin' good ;). Try again</p><br>
+        <button id="try-again">Try Again</button>`
+        let tryAgain = document.getElementById("try-again")
+        tryAgain.addEventListener("click", reset)
+    }
+    if (ratio > 0.8) {
+        document.getElementById("modal-container").style.display = "flex";
+        document.getElementById("modal-content").innerHTML = `<h2>You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><br>Great Job!! You are really goooood =)<br>
+        <button id="try-again">Try Again</button>`
+        let tryAgain = document.getElementById("try-again")
+        tryAgain.addEventListener("click", reset)
     }
 }
-
 /**
  * plays the first note
  */
-
 function firstNote() {
     let audio = new Audio(sounds[0].sample)
     audio.play();
-    setTimeout(secondNote, 1500)
+    document.getElementById("sound-one").style.animationPlayState= "running"
+    setTimeout(secondNote, 1000)
 }
-
 /**
  * plays the 2nd note (random)
  */
-
 function secondNote() {
     let randomNumber = Math.floor(Math.random() * 7);
     let audio = new Audio(sounds[randomNumber].sample);
+    document.getElementById("sound-one").style.animationPlayState= "paused"
+    document.getElementById("sound-two").style.animationPlayState= "running"
     audio.play();
     interval = randomNumber;
-    answer()
     console.log(randomNumber)
+    setTimeout(answer, 1000)
 }
-
 /**
  * adds eventlisteners to each button and changes the value of guess to the datavalue of the button clicked
  */
 
 function answer() {
+    document.getElementById("sound-two").style.animationPlayState= "paused"
+
     let answerButtons = document.getElementsByClassName("answer-buttons");
     for (button of answerButtons) {
         button.addEventListener("click", storeAnswer)
     }
 }
-
 /**
  * stores answer in variable
- * 
- * 
  */
 
 function storeAnswer(event) {
     guess = event.target.dataset.answer
     checkAnswer()
 }
-
-
 /**
  * checks if interval and guess are the same and increase score wrong/right
  */
@@ -182,9 +176,6 @@ function checkAnswer() {
     }
 
 }
-
-
-
 /**
  * reset values
  */
@@ -195,8 +186,6 @@ function reset() {
     document.getElementById("wrong-answers-value").innerHTML = 0;
     startGame()
 }
-
-
 /**
  * Event Listeners
  */
