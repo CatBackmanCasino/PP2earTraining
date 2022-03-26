@@ -17,7 +17,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    background-color: rgba(189, 189, 189, 0.308);
+    background-color: rgba(189, 189, 189, 0.918);
     border-radius: 10px;
     max-width: fit-content;
     position: absolute; 
@@ -69,7 +69,6 @@ button{
 
 #start-button::before{
     color: black;
-    content: "Major Scale";
  }
 
 h1 {
@@ -108,18 +107,18 @@ h1 {
     color: rgb(207, 207, 207);
 }
 
-
 #answer-alternatives {
 
     grid-area: d;
     display: flex;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
 .answer-buttons {
-    width: 100%;
+    width: 25%;
     font-size: 2rem;
-    padding-top: 4rem;
+    border: 1px dotted black;
+    box-sizing: border-box;
 }
 
 .icons {
@@ -134,7 +133,7 @@ h1 {
     }
     50%{
         transform: scale(1.1);
-        color: rgb(163, 36, 36);
+        color: rgb(192, 188, 255);
     }
     100%{
         transform: scale(1);
@@ -145,10 +144,18 @@ h1 {
 
 /* media queries */
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 500px){
+    #game-canvas{
+        position: absolute; 
+        left: 0%;
+        top: 0%;
+        transform: translate(-0%, -0%);
+        height: 100%;
+        width: 100%;
+    }
 
-* {
-    transform: scale();
-}
+    #game-area{
+        height: 100%;
+    }
 
 }
