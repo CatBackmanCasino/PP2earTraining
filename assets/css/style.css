@@ -10,15 +10,21 @@ body {
     background-image: url(../images/background.jpeg);
     background-repeat: no-repeat;
     background-position: center;
+    background-color: black;
 }
 
 #game-canvas {
     margin-left: auto;
     margin-right: auto;
-    width:fit-content;
-    margin-top: 100px;
+    margin-top: 10px;
     background-color: rgba(189, 189, 189, 0.308);
     border-radius: 10px;
+    max-width: fit-content;
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
 }
 
 #modal-container {
@@ -26,9 +32,10 @@ body {
     background-color: rgb(192, 192, 192);
     border-radius: 10px;
     padding: 20px;
+    
 
     /* Found this code on stackoverflow  https://stackoverflow.com/questions/39627549/how-to-center-modal-to-the-center-of-screen */
-    position: absolute;
+    position: absolute; 
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -87,8 +94,7 @@ h1 {
         "h i J";
 
     text-align: center;
-    height: 500px;
-    width: 800px;
+
     margin: 50px auto 0px auto;
 
 }
@@ -138,3 +144,11 @@ h1 {
 }
 
 /* media queries */
+
+@media screen and (max-width: 1000px){
+
+* {
+    transform: scale();
+}
+
+}
