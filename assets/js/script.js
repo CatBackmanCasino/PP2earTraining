@@ -115,7 +115,7 @@
   * plays the 2nd note (random)
   */
  function secondNote() {
-     let randomNumber = Math.floor(Math.random() * 7);
+     let randomNumber = Math.floor(Math.random() * 8);
      let audio = sounds[randomNumber].sample;
      document.getElementById("sound-one").style.animationPlayState = "paused";
      document.getElementById("sound-two").style.animationPlayState = "running";
