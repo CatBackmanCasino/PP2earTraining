@@ -54,7 +54,7 @@ button {
     color: pink;
     bottom: 0;
     animation-name: heart1;
-    animation-duration: 1s;
+    animation-duration: 700ms;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-play-state: paused;
@@ -64,7 +64,7 @@ button {
     color: pink;
     bottom: 0;
     animation-name: heart2;
-    animation-duration: 1s;
+    animation-duration: 700ms;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-play-state: paused;
@@ -76,7 +76,7 @@ button {
     color: pink;
     bottom: 0;
     animation-name: heart3;
-    animation-duration: 1s;
+    animation-duration: 700ms;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-play-state: paused;
@@ -211,6 +211,13 @@ h2:hover {
         opacity: 0;
 
     }
+
+    10%{
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+
+    }
     60%{
         bottom: 300px;
         left: 100px;
@@ -219,7 +226,7 @@ h2:hover {
 
 
 
-    100%{
+    80%{
         bottom:0;
         left: 105px;
         opacity: 0;

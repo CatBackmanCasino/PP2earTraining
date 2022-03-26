@@ -67,7 +67,7 @@ function runGame() {
  * removes modal and starts the game
  */
 function startGame() {
-    
+
     document.getElementById("modal-container").style.display = "none";
     let questionNumber = document.getElementById("question-number-value").innerHTML;
     if (questionNumber < 10) {
@@ -78,6 +78,7 @@ function startGame() {
         scoreSummary()
     }
 }
+
 function scoreSummary() {
     let score = document.getElementById("right-answers-value").innerHTML;
     let questions = document.getElementById("question-number-value").innerHTML;
@@ -111,7 +112,7 @@ function scoreSummary() {
 function firstNote() {
     let audio = new Audio(sounds[0].sample)
     audio.play();
-    document.getElementById("sound-one").style.animationPlayState= "running"
+    document.getElementById("sound-one").style.animationPlayState = "running"
     setTimeout(secondNote, 1600)
 }
 /**
@@ -120,8 +121,8 @@ function firstNote() {
 function secondNote() {
     let randomNumber = Math.floor(Math.random() * 7);
     let audio = new Audio(sounds[randomNumber].sample);
-    document.getElementById("sound-one").style.animationPlayState= "paused"
-    document.getElementById("sound-two").style.animationPlayState= "running"
+    document.getElementById("sound-one").style.animationPlayState = "paused"
+    document.getElementById("sound-two").style.animationPlayState = "running"
     audio.play();
     interval = randomNumber;
     console.log(randomNumber)
@@ -132,7 +133,7 @@ function secondNote() {
  */
 
 function answer() {
-    document.getElementById("sound-two").style.animationPlayState= "paused"
+    document.getElementById("sound-two").style.animationPlayState = "paused"
 
     let answerButtons = document.getElementsByClassName("answer-buttons");
     for (button of answerButtons) {
@@ -156,7 +157,21 @@ function checkAnswer() {
         console.log("right Answer")
         let rightAnswers = document.getElementById("right-answers-value").innerText;
         document.getElementById("right-answers-value").innerText = ++rightAnswers
-        startGame()
+
+
+
+        let hearts = document.getElementsByClassName("hearts");
+        for (heart of hearts) {
+            heart.style.animationPlayState = "running";    
+        }
+        setTimeout(stopAnimation, 690)
+        function stopAnimation(){
+            console.log("poop")
+            for (heart of hearts) {
+                heart.style.animationPlayState = "paused";   
+        }
+    }
+    startGame()
 
     } else {
 
