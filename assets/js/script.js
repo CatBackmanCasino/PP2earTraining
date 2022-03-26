@@ -87,14 +87,14 @@
          let tryAgain = document.getElementById("try-again");
          tryAgain.addEventListener("click", reset);
      }
-     if (ratio > 0.5 && ratio < 0.8) {
+     if (ratio > 0.5 && ratio < 0.85) {
          document.getElementById("modal-container").style.display = "flex";
          document.getElementById("modal-content").innerHTML = `<h2 aria-label="your score">You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><p>Pretty decent!! you're gettin' good ;). Try again</p><br>
           <button id="try-again" aria-label="try again">Try Again</button>`;
          let tryAgain = document.getElementById("try-again");
          tryAgain.addEventListener("click", reset);
      }
-     if (ratio > 0.8) {
+     if (ratio > 0.85) {
          document.getElementById("modal-container").style.display = "flex";
          document.getElementById("modal-content").innerHTML = `<h2 aria-label="your score">You Scored<br>${Math.floor((score)/(questions)*100)}%</h2><br><br>Great Job!! You are really goooood =)<br>
           <button id="try-again" aria-label="try again">Try Again</button>`;

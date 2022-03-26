@@ -8,47 +8,44 @@ Good luck!
 
 ## Features 
 
-KISS - keep it simple... sir?
+### Welcome modal
+The welcome modal provides the user with a greeting and instructions as well as a 'start game' button. By keeping the introduction short the player is quickly engaged in the game.
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+![Welcome](assets/images/readmemedia/welcome-modal.png)
 
-### Existing Features
+### main view
+When the 'Start Game' button is clicked the player will hear first one and then a second note and will be able to guess the interval by pressing one of the eight buttons convieniently placed within thumb-reach (if on a smartphone). On the top, just under the logo you can see the current scale as well as two notes who are animated so that one the first note is played, the left one is changing colors and when the second one is played, the right one will do the same.
+The number of correct and wrong answers as well as the current question number is also visible here.
 
-- __The Love Maths Logo and Heading__
+![Main screen](assets/images/readmemedia/main-view.png)
 
-  - Featured at the top of the page, the Love Maths logo and heading is easy to see for the user. Upon viewing the page, the user will be able to see the name of the game.
+### Answer feedback
+When the player made a choice and pressed a button the feedback is instant to make sure the players engagement is not dropped. If the guess was right, hearts will flow up from the bottom left corner making them always visable for right hand users. If the answer is wrong a modal will show the guess and the right answer so that the player can easily improve until next time that note comes up.
+![Right Answer Hearts](assets/images/readmemedia/hearts.png)
+![wrong answers modal](assets/images/readmemedia/wrong-answer.png)
 
-![Logo](media/love_maths_logo.png)
+### next round
+After the feedback the next question comes automaticaly, again to make sure the engagement is up. The loop then continues until the 10th question is answered.
 
-- __The Game Area__
+### score summary
+After the 10th question the player is showed their score in percent and a message based on their score and are prompted to try again.
+All they have to do is press the button and they are back to the welcome modal and can try again.
 
-  - This section will allow the user to play the maths game. The user will be able to easily see icons for addition,  subtraction, multiplication, and division games.
-  - The user will be able to select the type of maths game they will be playing by clicking on the different icons. 
-
-![Game](media/love_maths_icons.png)
-
-- __The Question section__
-
-  - The question section is where the user will be able to see the elementary arithmetic question to answer as part of the game. The user will be able answer the questions in the answer box provide
-  - The user will be able to submit their answer and a pop-up will make it known to the user if they answered correctly. 
-
-![Question](media/love_maths_question.png)
-
-- __The Score Area__
-
-  - This section will allow the user to see exactly how many correct and incorrect answers they have provided. 
-
-![score](media/love_maths_answer.png)
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+![Score Summary](assets/images/readmemedia/scoresummary.png)
 
 ### Features Left to Implement
 
-- Another feature idea
+- Game Structure
+  - 1st level note 3, 5 and seven of the major scale
+  - 2nd level including all notes of the major scale
+  - 3rd level note 3, 5 and seven of the minor scale  
+  - 4th level including all notes of the minor scale
+  - 5th level mixing thirds and sevens from minor and major scale
+  - 6th level chromatic
+- There are so many possibilities to this game. it would be great to create all scales and mix them in different ways and also change the key of the scales etc. 
 
 ## Testing 
+
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
