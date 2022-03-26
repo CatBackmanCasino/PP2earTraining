@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(/assets/images/background.jpeg);
+    background-image: url(../images/background.jpeg);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -136,3 +136,5 @@ h1 {
     }
     
 }
+
+/* media queries */
