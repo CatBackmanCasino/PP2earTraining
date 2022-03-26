@@ -184,13 +184,15 @@ function reset() {
     document.getElementById("question-number-value").innerHTML = 0;
     document.getElementById("right-answers-value").innerHTML = 0;
     document.getElementById("wrong-answers-value").innerHTML = 0;
-    startGame()
+    runGame()
 }
 /**
  * Event Listeners
  */
 let start = document.getElementById("start-game-button");
 start.addEventListener("click", startGame);
+let restartGame = document.getElementById("restart-game")
+restartGame.addEventListener("click", reset);
 
 
 // Maybe add funnction that i can play the notes again if i click them?

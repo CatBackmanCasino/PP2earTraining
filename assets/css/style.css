@@ -54,7 +54,7 @@ body {
 
 button{
     display: block;
-    font-size: 20px;
+    font-size: 1rem;
     align-items: center;
     background-color: rgba(240, 248, 255, 0);
     margin: auto;
@@ -90,11 +90,20 @@ h1 {
     grid-template-areas: "a b c"
         "d d d"
         "e f g"
-        "h i J";
+        "h i J"
+        "k k k";
 
     text-align: center;
 
     margin: 50px auto 0px auto;
+
+}
+
+#restart-game{
+    grid-area: k;
+    width: 100;
+    text-align: center;
+    font-size: 1.5rem;
 
 }
 
@@ -112,6 +121,7 @@ h1 {
     grid-area: d;
     display: flex;
     flex-wrap: wrap;
+    align-content:center ;
 }
 
 .answer-buttons {
@@ -122,7 +132,7 @@ h1 {
 }
 
 .icons {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 /* animations */
@@ -145,17 +155,32 @@ h1 {
 /* media queries */
 
 @media screen and (max-width: 500px){
+
+    *{
+        padding: 0;
+    }
+    body{
+
+        overflow: hidden;
+        background-image: none;
+        background-color: rgba(189, 189, 189, 0.918);
+    }
     #game-canvas{
-        position: absolute; 
-        left: 0%;
-        top: 0%;
-        transform: translate(-0%, -0%);
+        position: fixed; 
         height: 100%;
         width: 100%;
+        border-radius: 0%;
+        margin-top: 0;
+    }
+
+    #modal-container{
+        box-shadow: 10px 10px 10px black;
+        font-size: 1.3rem;
+        width: 90%;
     }
 
     #game-area{
-        height: 100%;
+        height: 80%;
     }
 
 }
