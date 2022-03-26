@@ -54,8 +54,8 @@ let guess = "";
 function runGame() {
 
     document.getElementById("modal-container").style.display = "flex";
-    document.getElementById("modal-content").innerHTML = `<h2>Hi and welcome to EarTrainer 1!</h2><br>
-    This game is awesome if you want to improve your musical ear.<br>
+    document.getElementById("modal-content").innerHTML = `<h2>EarTrainer 1!</h2><br>
+    Test your musical skills in this awesome quiz-game.<br><br>
     Instructions:<br>
     1. The game will play two notes.<br>
     2. Guess the interval.<br>Good Luck<br><p>
@@ -112,7 +112,7 @@ function firstNote() {
     let audio = new Audio(sounds[0].sample)
     audio.play();
     document.getElementById("sound-one").style.animationPlayState= "running"
-    setTimeout(secondNote, 1000)
+    setTimeout(secondNote, 1600)
 }
 /**
  * plays the 2nd note (random)
@@ -125,7 +125,7 @@ function secondNote() {
     audio.play();
     interval = randomNumber;
     console.log(randomNumber)
-    setTimeout(answer, 1000)
+    setTimeout(answer, 500)
 }
 /**
  * adds eventlisteners to each button and changes the value of guess to the datavalue of the button clicked
@@ -169,7 +169,7 @@ function checkAnswer() {
         let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
         document.getElementById("wrong-answers-value").innerText = ++wrongAnswers
 
-        document.getElementById("modal-content").innerHTML = `Ooops, you answered ${userAnswer}. The correct answer was ${correctAnswer}.<br><br><button id="ok">OK!</button>`;
+        document.getElementById("modal-content").innerHTML = `<h2>Ooops!</h2> You answered ${userAnswer}. The correct answer was ${correctAnswer}.<br><br><button id="ok">OK!</button>`;
         let okButton = document.getElementById("ok");
         okButton.addEventListener("click", startGame)
 
@@ -191,7 +191,7 @@ function reset() {
  */
 let start = document.getElementById("start-game-button");
 start.addEventListener("click", startGame);
-let restartGame = document.getElementById("restart-game")
+let restartGame = document.getElementById("restart-game-button")
 restartGame.addEventListener("click", reset);
 
 

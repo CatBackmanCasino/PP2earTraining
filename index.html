@@ -18,16 +18,25 @@
         <div id="modal-container">
             <div id="modal-content"></div>
         </div>
-        <h1>EarTrainer ver 1.0</h1>
+        <div id="heart1"><i class="fa-solid fa-heart"></i></div>
+        <div id="heart2"><i class="fa-solid fa-heart"></i></div>
+        <div id="heart3"><i class="fa-solid fa-heart"></i></div>
+        <header>
+            <h1>EarTrainer</h1>
+        </header>
+
         <div id="game-area">
             <div id="sound-one" class="gameitem icons">
                 <p><i class="fa-solid fa-music"></i></p>
             </div>
-            <div class="gameitem icons">
+
+            <div id="scale" class="gameitem icons">
                 <p>Major (c)</p>
+
             </div>
             <div id="sound-two" class="gameitem icons">
                 <p><i class="fa-solid fa-music"></i></p>
+
             </div>
             <div id="answer-alternatives">
                 <div class="answer-buttons blink">
@@ -52,23 +61,23 @@
                     <p data-answer="6">7th</p>
                 </div>
                 <div class="answer-buttons blink">
-                    <p data-answer="7">Octave</p>
+                    <p data-answer="7">8th</p>
                 </div>
             </div>
             <div id="right-answers" class="gameitem">
                 <p>Correct Answers</p>
+                <div class="gameitem" id="right-answers-value">0</div>
             </div>
             <div id="question-number" class="gameitem">
-                <p>Question number</p>
+                <p>Question</p>
+                <div class="gameitem" id="question-number-value">0</div>
             </div>
             <div id="wrong-answers" class="gameitem">
                 <p>Wrong Answers</p>
+                <div class="gameitem" id="wrong-answers-value">0</div>
             </div>
-            <div class="gameitem" id="right-answers-value">0</div>
-            <div class="gameitem" id="question-number-value">0</div>
-            <div class="gameitem" id="wrong-answers-value">0</div>
-            <div id="restart-game" class="blink">RESTART!</div>
         </div>
+        <div id="restart-game-button" class="blink"><h2>RESTART!</h2></div>
     </div>
 
 
