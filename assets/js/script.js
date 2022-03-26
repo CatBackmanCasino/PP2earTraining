@@ -8,42 +8,42 @@ document.addEventListener("DOMContentLoaded", runGame())
 let sounds = [{
         note: "c1",
         interval: "first",
-        sample: "assets/media/c1.mp3"
+        sample: new Audio("assets/media/c1.mp3")
     },
     {
         note: "d1",
         interval: "second",
-        sample: "assets/media/d1.mp3"
+        sample: new Audio("assets/media/d1.mp3")
     },
     {
         note: "e1",
         interval: "third",
-        sample: "assets/media/e1.mp3"
+        sample: new Audio("assets/media/e1.mp3")
     },
     {
         note: "f1",
         interval: "fourth",
-        sample: "assets/media/f1.mp3"
+        sample: new Audio("assets/media/f1.mp3")
     },
     {
         note: "g1",
         interval: "fifth",
-        sample: "assets/media/g1.mp3"
+        sample: new Audio("assets/media/g1.mp3")
     },
     {
         note: "a1",
         interval: "sixth",
-        sample: "assets/media/a1.mp3"
+        sample: new Audio("assets/media/a1.mp3")
     },
     {
         note: "b1",
         interval: "seventh",
-        sample: "assets/media/b1.mp3"
+        sample: new Audio("assets/media/b1.mp3")
     },
     {
         note: "c2",
         interval: "octave",
-        sample: "assets/media/c2.mp3"
+        sample: new Audio("assets/media/c2.mp3")
     }
 ]
 let interval = "";
@@ -110,17 +110,17 @@ function scoreSummary() {
  * plays the first note
  */
 function firstNote() {
-    let audio = new Audio(sounds[0].sample)
+    let audio = sounds[0].sample;
     audio.play();
     document.getElementById("sound-one").style.animationPlayState = "running"
-    setTimeout(secondNote, 2000)
+    setTimeout(secondNote, 1700)
 }
 /**
  * plays the 2nd note (random)
  */
 function secondNote() {
     let randomNumber = Math.floor(Math.random() * 7);
-    let audio = new Audio(sounds[randomNumber].sample);
+    let audio = sounds[randomNumber].sample;
     document.getElementById("sound-one").style.animationPlayState = "paused"
     document.getElementById("sound-two").style.animationPlayState = "running"
     audio.play();
@@ -134,7 +134,6 @@ function secondNote() {
 
 function answer() {
     document.getElementById("sound-two").style.animationPlayState = "paused"
-
     let answerButtons = document.getElementsByClassName("answer-buttons");
     for (button of answerButtons) {
         button.addEventListener("click", storeAnswer)
@@ -157,16 +156,12 @@ function checkAnswer() {
         console.log("right Answer")
         let rightAnswers = document.getElementById("right-answers-value").innerText;
         document.getElementById("right-answers-value").innerText = ++rightAnswers
-
-
-
         let hearts = document.getElementsByClassName("hearts");
         for (heart of hearts) {
             heart.style.animationPlayState = "running";    
         }
         setTimeout(stopAnimation, 690)
         function stopAnimation(){
-            console.log("poop")
             for (heart of hearts) {
                 heart.style.animationPlayState = "paused";   
         }
@@ -177,13 +172,9 @@ function checkAnswer() {
 
         document.getElementById("modal-container").style.display = "flex";
         let correctAnswer = sounds[interval].interval;
-
         let userAnswer = sounds[guess].interval;
-
-
         let wrongAnswers = document.getElementById("wrong-answers-value").innerText;
         document.getElementById("wrong-answers-value").innerText = ++wrongAnswers
-
         document.getElementById("modal-content").innerHTML = `<h2>Ooops!</h2> You answered ${userAnswer}. The correct answer was ${correctAnswer}.<br><br><button id="ok">OK!</button>`;
         let okButton = document.getElementById("ok");
         okButton.addEventListener("click", startGame)
