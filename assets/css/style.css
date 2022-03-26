@@ -1,363 +1,337 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Palette+Mosaic&family=Permanent+Marker&family=Poppins:ital,wght@0,200;0,300;1,100;1,200;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Palette+Mosaic&family=Permanent+Marker&family=Poppins:ital,wght@0,200;0,300;1,100;1,200;1,300&display=swap");
 
 * {
-    font-family: "permanent marker", sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: "permanent marker", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-image: url(../images/background.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: black;
+  background-image: url(../images/background.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
 }
 
 button {
-    display: block;
-    font-size: 1.2rem;
-    align-items: center;
-    background-color: rgba(240, 248, 255, 0);
-    margin: auto;
-    border: none;
+  display: block;
+  font-size: 1.2rem;
+  align-items: center;
+  background-color: rgba(240, 248, 255, 0);
+  margin: auto;
+  border: none;
 }
 
 #restart-game-button {
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
-
 #modal-container {
-    box-shadow: 10px 10px 10px black;
-    display: none;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    padding: 20px;
-    /* Found this code on stackoverflow  https://stackoverflow.com/questions/39627549/how-to-center-modal-to-the-center-of-screen */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0.8rem;
-    z-index: 100;
+  box-shadow: 10px 10px 10px black;
+  display: none;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 20px;
+  /* Found this code on stackoverflow  https://stackoverflow.com/questions/39627549/how-to-center-modal-to-the-center-of-screen */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  z-index: 100;
 }
 
 #modal-content {
-    text-align: center;
+  text-align: center;
 }
 
-#heart1{
-    position: absolute;
-    color: pink;
-    bottom: 0;
-    animation-name: heart1;
-    animation-duration: 700ms;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
+#heart1 {
+  position: absolute;
+  color: pink;
+  bottom: 0;
+  animation-name: heart1;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
 }
-#heart2{
-    position: absolute;
-    color: pink;
-    bottom: 0;
-    animation-name: heart2;
-    animation-duration: 700ms;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
-
+#heart2 {
+  position: absolute;
+  color: pink;
+  bottom: 0;
+  animation-name: heart2;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
 }
 
-#heart3{
-    position: absolute;
-    color: pink;
-    bottom: 0;
-    animation-name: heart3;
-    animation-duration: 700ms;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
-
+#heart3 {
+  position: absolute;
+  color: pink;
+  bottom: 0;
+  animation-name: heart3;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
 }
 
 #game-canvas {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    background-color: rgb(54, 54, 54);
-    border-radius: 10px;
-    position: absolute;
-    height: fit-content;
-    width: fit-content;
-    max-width: 90%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.7rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color: rgb(54, 54, 54);
+  border-radius: 10px;
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  max-width: 90%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7rem;
 }
 
 header {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 1.3rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 #game-area {
-    text-align: center;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 3rem;
-    color: white;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 3rem;
+  color: white;
 }
 
 #scale {
-    text-align: center;
-    order: 1;
-    flex-basis: 100%;
+  text-align: center;
+  order: 1;
+  flex-basis: 100%;
 }
 
-#scale::before{
-    content: "Scale:";
+#scale::before {
+  content: "Scale:";
 }
 
 #sound-one {
-    order: 2;
-    flex-basis: 50%;
-    transform: scale(1);
-    animation-name: wobble;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
-    font-size: 3rem;
+  order: 2;
+  flex-basis: 50%;
+  transform: scale(1);
+  animation-name: wobble;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  font-size: 3rem;
 }
 
 #sound-two {
-    order: 3;
-    flex-basis: 50%;
-    transform: scale(1);
-    animation-name: wobble;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
-    font-size: 3rem;
+  order: 3;
+  flex-basis: 50%;
+  transform: scale(1);
+  animation-name: wobble;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  font-size: 3rem;
 }
 
 #answer-alternatives {
-    order: 4;
-    flex-basis: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  order: 4;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .answer-buttons {
-    box-sizing: border-box;
-    margin: 0.5rem;
-    padding: 1rem;
-    border: 1px solid rgb(255, 255, 255);
-    display: flex;
-    flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 0.5rem;
+  padding: 1rem;
+  border: 1px solid rgb(255, 255, 255);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #right-answers {
-    order: 5;
-    flex-basis: 30%;
+  order: 5;
+  flex-basis: 30%;
 }
 
 #question-number {
-    order: 6;
-    flex-basis: 30%;
+  order: 6;
+  flex-basis: 30%;
 }
 
 #wrong-answers {
-    order: 7;
+  order: 7;
 
-    flex-basis: 30%;
+  flex-basis: 30%;
 }
 
 #question-number-value::after {
-    color: rgb(255, 255, 255);
-    content: "/10";
+  color: rgb(255, 255, 255);
+  content: "/10";
 }
-
-
 
 .blink:hover,
 button:hover,
 h2:hover {
-    color: rgb(207, 207, 207);
+  color: rgb(207, 207, 207);
 }
 
-
-
 /* animations */
-
 
 /* right Answer Animation */
 
 @keyframes heart1 {
-    0%{
-        bottom: 0;
-        left: 0;
-        opacity: 0;
+  0% {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+  }
 
-    }
+  10% {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+  }
+  60% {
+    bottom: 300px;
+    left: 100px;
+    opacity: 1;
+  }
 
-    10%{
-        bottom: 0;
-        left: 0;
-        opacity: 0;
-
-    }
-    60%{
-        bottom: 300px;
-        left: 100px;
-        opacity: 1;
-    }
-
-
-
-    80%{
-        bottom:0;
-        left: 105px;
-        opacity: 0;
-    }
-    
+  80% {
+    bottom: 0;
+    left: 105px;
+    opacity: 0;
+  }
 }
 
 @keyframes heart2 {
-    0%{
-        bottom: 0;
-        left: 0;
-        opacity: 0;
+  0% {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+  }
+  80% {
+    bottom: 290px;
+    left: 180px;
+    opacity: 1;
+  }
 
-    }
-    80%{
-        bottom: 290px;
-        left: 180px;
-        opacity: 1;
-    }
-
-
-
-    100%{
-        bottom:0;
-        left: 100px;
-        opacity: 0;
-    }
-    
+  100% {
+    bottom: 0;
+    left: 100px;
+    opacity: 0;
+  }
 }
 
 @keyframes heart3 {
-    0%{
-        bottom: 0;
-        left: 0;
-        opacity: 0;
+  0% {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+  }
+  60% {
+    bottom: 305px;
+    left: 187px;
+    opacity: 1;
+  }
 
-    }
-    60%{
-        bottom: 305px;
-        left: 187px;
-        opacity: 1;
-    }
-
-
-
-    100%{
-        bottom:0;
-        left: 100px;
-        opacity: 0;
-    }
-    
+  100% {
+    bottom: 0;
+    left: 100px;
+    opacity: 0;
+  }
 }
-
-
 
 /* note animation */
 @keyframes wobble {
-    0% {
-        transform: scale(1);
-        color: rgb(255, 255, 255);
-        text-shadow: 1px 2px 10px rgb(255, 80, 197);
-    }
+  0% {
+    transform: scale(1);
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 2px 10px rgb(255, 80, 197);
+  }
 
-    10% {
-        transform: scale(1.1);
-        color: rgb(255, 0, 0);
-        text-shadow: 2px 1px 10px rgb(255, 80, 197);
-    }
+  10% {
+    transform: scale(1.1);
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 1px 10px rgb(255, 80, 197);
+  }
 
-    20% {
-        transform: scale(1.1);
-        color: rgb(60, 255, 0);
-        text-shadow: 2px 4px 10px rgb(255, 80, 197);
-    }
+  20% {
+    transform: scale(1.1);
+    color: rgb(60, 255, 0);
+    text-shadow: 2px 4px 10px rgb(255, 80, 197);
+  }
 
-    30% {
-        transform: scale(1.1);
-        color: rgb(197, 0, 187);
-        text-shadow: 2px 5px 10px rgb(255, 80, 197);
-    }
+  30% {
+    transform: scale(1.1);
+    color: rgb(197, 0, 187);
+    text-shadow: 2px 5px 10px rgb(255, 80, 197);
+  }
 
-    40% {
-        transform: scale(1.1);
-        color: rgb(0, 161, 22);
-        text-shadow: 1px 3px 10px rgb(255, 80, 197);
-    }
+  40% {
+    transform: scale(1.1);
+    color: rgb(0, 161, 22);
+    text-shadow: 1px 3px 10px rgb(255, 80, 197);
+  }
 
-    50% {
-        transform: scale(1.1);
-        color: rgb(40, 61, 255);
-        text-shadow: 4px 20px 10px rgb(255, 80, 197);
-    }
+  50% {
+    transform: scale(1.1);
+    color: rgb(40, 61, 255);
+    text-shadow: 4px 20px 10px rgb(255, 80, 197);
+  }
 
-    60% {
-        transform: scale(1.1);
-        color: rgb(97, 231, 255);
-        text-shadow: 1px 6px 10px rgb(255, 80, 197);
-    }
+  60% {
+    transform: scale(1.1);
+    color: rgb(97, 231, 255);
+    text-shadow: 1px 6px 10px rgb(255, 80, 197);
+  }
 
-    70% {
-        transform: scale(1.1);
-        color: rgb(255, 0, 0);
-        text-shadow: 1px 5px 10px rgb(255, 80, 197);
-    }
+  70% {
+    transform: scale(1.1);
+    color: rgb(255, 0, 0);
+    text-shadow: 1px 5px 10px rgb(255, 80, 197);
+  }
 
-    80% {
-        transform: scale(1.1);
-        color: rgb(0, 114, 44);
-        text-shadow: 1px 2px 10px rgb(255, 80, 197);
-    }
-    
-    90% {
-        transform: scale(1.1);
-        color: rgb(255, 139, 255);
-        text-shadow: 1px 4px 10px rgb(255, 80, 197);
-    }
+  80% {
+    transform: scale(1.1);
+    color: rgb(0, 114, 44);
+    text-shadow: 1px 2px 10px rgb(255, 80, 197);
+  }
 
+  90% {
+    transform: scale(1.1);
+    color: rgb(255, 139, 255);
+    text-shadow: 1px 4px 10px rgb(255, 80, 197);
+  }
 
-    100% {
-        transform: scale(1);
-        color: rgb(0, 0, 0);
-        text-shadow: 1px 1px 10px rgb(255, 80, 197);
-    }
-
+  100% {
+    transform: scale(1);
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 10px rgb(255, 80, 197);
+  }
 }
 
 /* media queries */
 
 @media screen and (max-width: 500px) {
-
-
-   #game-canvas{
-max-width: 100%;   }
+  #game-canvas {
+    max-width: 100%;
+  }
 }
