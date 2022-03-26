@@ -191,3 +191,6 @@ function reset() {
  */
 let start = document.getElementById("start-game-button");
 start.addEventListener("click", startGame);
+
+
+// Maybe add funnction that i can play the notes again if i click them?
