@@ -46,6 +46,27 @@ All they have to do is press the button and they are back to the welcome modal a
 
 ## Testing 
 
+Throughout development the game has been continuously tested on an iphone 12 and a macbook 15" late 2018 using Chrome, safari and Duck Duck Go.
+
+After finishing the first running good beta version i asked the slack community as well as my friends and family to try the game.
+
+The game has now been tested on:
+
+- iphone 12 
+    - Safari
+    - chrome
+    - Duck Duck Go
+- iphone 13
+    - safari
+    - chrome
+-   macbook pro 15"
+    - chrome
+    - safari
+    - edge
+
+
+
+
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 

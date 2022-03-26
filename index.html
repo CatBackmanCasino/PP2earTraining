@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,72 +10,76 @@
 
     <link rel="shortcut icon" href="#" />
 </head>
-<body>
-    <div id="game-canvas">
-        <div id="modal-container">
-            <div id="modal-content"></div>
-        </div>
-        <div id="heart1" class="hearts"><i class="fa-solid fa-heart"></i></div>
-        <div id="heart2" class="hearts"><i class="fa-solid fa-heart"></i></div>
-        <div id="heart3" class="hearts"><i class="fa-solid fa-heart"></i></div>
-        <header>
-            <h1>EarTrainer</h1>
-        </header>
 
-        <div id="game-area">
-            <div id="sound-one" class="gameitem icons">
-                <p><i class="fa-solid fa-music"></i></p>
+<body>
+    <div id="background">
+        <div id="game-canvas">
+            <div id="modal-container">
+                <div id="modal-content"></div>
             </div>
-            <div aria-label="current scale" id="scale" class="gameitem icons">
-                <p>Major (c)</p>
+            <div id="heart1" class="hearts"><i class="fa-solid fa-heart"></i></div>
+            <div id="heart2" class="hearts"><i class="fa-solid fa-heart"></i></div>
+            <div id="heart3" class="hearts"><i class="fa-solid fa-heart"></i></div>
+            <header>
+                <h1>EarTrainer</h1>
+            </header>
+
+            <div id="game-area">
+                <div id="sound-one" class="gameitem icons">
+                    <p><i class="fa-solid fa-music"></i></p>
+                </div>
+                <div aria-label="current scale" id="scale" class="gameitem icons">
+                    <p>Major (c)</p>
+                </div>
+                <div id="sound-two" class="gameitem icons">
+                    <p><i class="fa-solid fa-music"></i></p>
+                </div>
+                <div id="answer-alternatives">
+                    <div aria-label="guess 1st note" class="answer-buttons blink">
+                        <p data-answer="0">1st</p>
+                    </div>
+                    <div aria-label="guess 2nd note" class="answer-buttons blink">
+                        <p data-answer="1">2nd</p>
+                    </div>
+                    <div aria-label="guess 3rd note" class="answer-buttons blink">
+                        <p data-answer="2">3rd</p>
+                    </div>
+                    <div aria-label="guess 4th note" class="answer-buttons blink">
+                        <p data-answer="3">4th</p>
+                    </div>
+                    <div aria-label="guess 5th note" class="answer-buttons blink">
+                        <p data-answer="4">5th</p>
+                    </div>
+                    <div aria-label="guess 6th note" class="answer-buttons blink">
+                        <p data-answer="5">6th</p>
+                    </div>
+                    <div aria-label="guess 7th note" class="answer-buttons blink">
+                        <p data-answer="6">7th</p>
+                    </div>
+                    <div aria-label="guess 8th note" class="answer-buttons blink">
+                        <p data-answer="7">8th</p>
+                    </div>
+                </div>
+                <div id="right-answers" class="gameitem">
+                    <p>Correct Answers</p>
+                    <div aria-label="right answers" class="gameitem" id="right-answers-value">0</div>
+                </div>
+                <div id="question-number" class="gameitem">
+                    <p>Question</p>
+                    <div aria-label="question number" class="gameitem" id="question-number-value">0</div>
+                </div>
+                <div id="wrong-answers" class="gameitem">
+                    <p>Wrong Answers</p>
+                    <div aria-label="right answers" class="gameitem" id="wrong-answers-value">0</div>
+                </div>
             </div>
-            <div id="sound-two" class="gameitem icons">
-                <p><i class="fa-solid fa-music"></i></p>
+            <div aria-label="restart game" id="restart-game-button" class="blink">
+                <h2>RESTART!</h2>
             </div>
-            <div id="answer-alternatives">
-                <div aria-label="guess 1st note" class="answer-buttons blink">
-                    <p data-answer="0">1st</p>
-                </div>
-                <div aria-label="guess 2nd note" class="answer-buttons blink">
-                    <p data-answer="1">2nd</p>
-                </div>
-                <div aria-label="guess 3rd note" class="answer-buttons blink">
-                    <p data-answer="2">3rd</p>
-                </div>
-                <div aria-label="guess 4th note" class="answer-buttons blink">
-                    <p data-answer="3">4th</p>
-                </div>
-                <div aria-label="guess 5th note" class="answer-buttons blink">
-                    <p data-answer="4">5th</p>
-                </div>
-                <div aria-label="guess 6th note" class="answer-buttons blink">
-                    <p data-answer="5">6th</p>
-                </div>
-                <div aria-label="guess 7th note" class="answer-buttons blink">
-                    <p data-answer="6">7th</p>
-                </div>
-                <div aria-label="guess 8th note" class="answer-buttons blink">
-                    <p data-answer="7">8th</p>
-                </div>
-            </div>
-            <div id="right-answers" class="gameitem">
-                <p>Correct Answers</p>
-                <div aria-label="right answers" class="gameitem" id="right-answers-value">0</div>
-            </div>
-            <div id="question-number" class="gameitem">
-                <p>Question</p>
-                <div aria-label="question number" class="gameitem" id="question-number-value">0</div>
-            </div>
-            <div id="wrong-answers" class="gameitem">
-                <p>Wrong Answers</p>
-                <div aria-label="right answers" class="gameitem" id="wrong-answers-value">0</div>
-            </div>
-        </div>
-        <div aria-label="restart game" id="restart-game-button" class="blink">
-            <h2>RESTART!</h2>
         </div>
     </div>
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/51932b41cf.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
