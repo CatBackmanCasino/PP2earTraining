@@ -332,7 +332,35 @@ h2:hover {
 
 @media screen and (max-width: 500px) {
   #game-canvas {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    background-color: rgba(54, 54, 54, 0.966);
+    border-radius: 0;
+    position: block;
+    height: 100%;
+    width: 100%;
     max-width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7rem;
+  }
+  #game-area {
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3rem;
+    color: white;
+  }
+
+  #restart-game-button{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 
   #right-answers, #wrong-answers, #question-number{
