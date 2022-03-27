@@ -100,20 +100,20 @@ Other than that the game looks and acts as intended.
 ### Validator Testing 
 
 - HTML
-    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-maths%2F)
+    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcatbackmancasino.github.io%2FPP2earTraining%2F)
 - CSS
-    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-maths%252F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcatbackmancasino.github.io%2FPP2earTraining%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv)
 - JavaScript
     - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
       - The following metrics were returned: 
-      - There are 11 functions in this file.
-      - Function with the largest signature takes 2 arguments, while the median is 0.
-      - Largest function has 10 statements in it, while the median is 3.
-      - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+      - There are 10 functions in this file.
+      - Function with the largest signature takes 1 arguments, while the median is 4.
+      - Largest function has 18 statements in it, while the median is 3.
+      - The most complex function has a cyclomatic complexity value of 5 while the median is 1.5.
 
 ### Unfixed Bugs
 
-So far it has looked good on all physical devices. But on Chromes DevTools there seemst to be issues with the game-canvas height.
+So far it has looked good on all physical devices. But on Chromes DevTools there seemst to be issues with the game-canvas height. (FIXED)
 One bug that a friend found is that on his, and only his macbook the game sometimes does not reset after the score modal. This bug i have not been able to reproduce.
 
 The hearts running when a correct answer is submited are made using CSS and the JS runs and pauses the animation a set amount of time usinig setTimeout. This causes the loop not to be perfect and so the hearts have a slightly diffrent start/stop poinit for each run. This problem is not major but should be fixed.
