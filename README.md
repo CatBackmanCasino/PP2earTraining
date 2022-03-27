@@ -111,6 +111,10 @@ Other than that the game looks and acts as intended.
       - Largest function has 18 statements in it, while the median is 3.
       - The most complex function has a cyclomatic complexity value of 5 while the median is 1.5.
 
+### Lighthouse Score
+
+![Lighthouse](assets/images/readmemedia/lighthouse.png)
+
 ### Unfixed Bugs
 
 So far it has looked good on all physical devices. But on Chromes DevTools there seemst to be issues with the game-canvas height. (FIXED)
@@ -143,7 +147,7 @@ Isabella Bäckman - Testing
 Robin Rodriguez - Testing
 
 ### Content 
-
+Deploymentpart of readme by: Code Institute
 Icons by Font Awesone
 Fonts by Google Fonts
 
