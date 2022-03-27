@@ -159,7 +159,7 @@
          let hearts = document.getElementsByClassName("hearts");
          for (var heart of hearts) {
              heart.style.animationPlayState = "running";
-             setTimeout(stopAnimation, 690);
+             setTimeout(stopAnimation, 680);
          }
          startGame();
      } else {

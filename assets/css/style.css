@@ -219,6 +219,11 @@ h2:hover {
     left: 105px;
     opacity: 0;
   }
+  100%{
+  bottom: 0;
+  left: 105px;
+  opacity: 0;
+  }
 }
 
 @keyframes heart2 {
@@ -227,6 +232,13 @@ h2:hover {
     left: 0;
     opacity: 0;
   }
+
+  60% {
+    bottom: 250px;
+    left: 170px;
+    opacity: 1;
+  }
+
   80% {
     bottom: 290px;
     left: 180px;
@@ -250,6 +262,11 @@ h2:hover {
     bottom: 305px;
     left: 187px;
     opacity: 1;
+  }
+  80% {
+    bottom: 0;
+    left: 100px;
+    opacity: 0;
   }
 
   100% {
