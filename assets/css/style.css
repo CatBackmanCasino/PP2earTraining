@@ -337,7 +337,7 @@ h2:hover {
     margin-top: 0;
     background-color: rgba(54, 54, 54, 0.966);
     border-radius: 0;
-    position: block;
+    position: absolute;
     height: 100%;
     width: 100%;
     max-width: 100%;
