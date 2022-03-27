@@ -56,8 +56,9 @@
      document.getElementById("modal-content").innerHTML = `<h2 aria-label="game name">EarTrainer 1!</h2><br>
       Test your musical skills in this awesome quiz-game.<br><br>
       Instructions:<br>
-      1. The game will play two notes.<br>
-      2. Guess the interval.<br>Good Luck<br><p>
+      1. Make sure your SOUND IS TURNED UP.<br>
+      2. The game will play two notes.<br>
+      3. Guess the interval.<br>Good Luck<br><p>
       <br><button aria-label="start game" id="start-game-button">Start Game</button>`;
      let start = document.getElementById("start-game-button");
      start.addEventListener("click", startGame);

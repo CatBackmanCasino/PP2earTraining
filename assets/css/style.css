@@ -334,6 +334,11 @@ h2:hover {
   #game-canvas {
     max-width: 100%;
   }
+
+  #right-answers, #wrong-answers, #question-number{
+    font-size: 1rem;
+  }
+  
 }
 
 /* very Large Screens */

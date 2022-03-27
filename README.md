@@ -2,6 +2,8 @@
 
 Ask any musician and they will tell you that hearing is the number one most important skill in a musicians, producers or singers toolbox. Without it you are doomed. That's why EarTrainer is your best friend and tutor. With this fun and simple quiz game your hearing will improve at a high pace giving you the skillset you need to pursuit your musical career.
 
+Oh, and it's also OK to play if you just want to play a fun game.
+
 Good luck!
 
 ![Responsive Mockup](assets/images/readmemedia/responsive.png)
@@ -16,19 +18,19 @@ Good luck!
 
 ## Features 
 
-- Welcome Modal
-- Main View
-- Anwer Feedback
-- Next Question
-- Score Summary
+- [Welcome Modal](#welcome-modal)
+- [Main View](#main-view)
+- [Anwer Feedback](#answer-feedback)
+- [Next Question](#next-question)
+- [Score Summary](#score-summary)
 
 ### Welcome modal
-The welcome modal provides the user with a greeting and instructions as well as a 'start game' button. By keeping the introduction short the player is quickly engaged in the game.
+The welcome modal provides the user with a greeting and instructions as well as a 'start game' button. By keeping the introduction positive and simple, the player is quickly launched into the game.
 
 ![Welcome](assets/images/readmemedia/welcome-modal.png)
 
-### main view
-When the 'Start Game' button is clicked the player will hear first one and then a second note and will be able to guess the interval by pressing one of the eight buttons convieniently placed within thumb-reach (if on a smartphone). On the top, just under the logo you can see the current scale as well as two notes who are animated so that one the first note is played, the left one is changing colors and when the second one is played, the right one will do the same.
+### Main view
+When the 'Start Game' button is clicked the player will first hear one and then a second note and will be prompted to guess the interval by pressing one of the eight buttons convieniently placed within thumb-reach (if on a smartphone). On the top, just under the logo you can see the current scale as well as two notes who are animated so that when the first note is played, the left one is changing colors and when the second one is played, the right one will do the same to indicate to the user that sound should be playing
 The number of correct and wrong answers as well as the current question number is also visible here.
 
 ![Main screen](assets/images/readmemedia/main-view.png)
@@ -38,17 +40,19 @@ When the player made a choice and pressed a button the feedback is instant to ma
 ![Right Answer Hearts](assets/images/readmemedia/hearts.png)
 ![wrong answers modal](assets/images/readmemedia/wrong-answer.png)
 
-### next Question
-After the feedback the next question comes automaticaly, again to make sure the engagement is up. The loop then continues until the 10th question is answered.
+### Next Question
+After the feedback the next question comes automaticaly, again to make sure the engagement isn't dropped. The loop then continues until the 10th question is answered.
 
-### score summary
-After the 10th question the player is showed their score in percent and a message based on their score and are prompted to try again.
+### Score summary
+After the 10th question the player is showed their score and a message based on their score and are prompted to try again.
 All they have to do is press the button and they are back to the welcome modal and can try again.
+
+There are several diffrent messages at the end of the game. Have you seen them all?
 
 ![Score Summary](assets/images/readmemedia/scoresummary.png)
 
 ### Future Features
-
+- Make answer alternatives light up after the first notes are played so to indicate that's where the buttons are. Just a nicie lookinig feature but not important.
 - Game Structure
   - 1st level note 3, 5 and seven of the major scale
   - 2nd level including all notes of the major scale
@@ -80,20 +84,17 @@ The game has now been tested on:
     - safari
     - edge
 
-### Tablets and Regular size laptop screens
-Game is centered 
+### responsive design
+The gamehas been designed using grids and flexboxes to ensure it translates well to any screen size. A few media querries have been added for the extremly large screens and also for small screens.
 
-### Smaller screens
+#### Large screens
+Background image removed because the resolution was not high enough.
 
+#### Small screens
+Slighty smaller font on result section
 
-
-Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+An interesting bug is that on one computer at one occasion the game never reset but just went on and on. 
+Other than that the game looks and acts as intended.
 
 
 ### Validator Testing 
