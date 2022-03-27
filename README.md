@@ -110,6 +110,7 @@ Other than that the game looks and acts as intended.
       - Function with the largest signature takes 1 arguments, while the median is 4.
       - The Largest function has 18 statements in it, while the median is 3.
       - The most complex function has a cyclomatic complexity value of 5 while the median is 1.5.
+      ![jshint](assets/images/readmemedia/jshint.png)
 
 ### Lighthouse Score
 
