@@ -118,7 +118,7 @@ Other than that the game looks and acts as intended.
 
 ### Unfixed Bugs
 
-So far it has looked good on all physical devices. But on Chromes Retools there seems to be issues with the game-canvas height. (FIXED)
+So far it has looked good on all physical devices. But on Chromes Devtools there seems to be issues with the game-canvas height. (FIXED)
 One bug that a friend found is that on his, and only his mac book the game sometimes does not reset after the score modal. This bug i have not been able to reproduce.
 
 The hearts running when a correct answer is submitted are made using CSS and the JS runs and pauses the animation a set amount of time using setTimeout. This causes the loop not to be perfect and so the hearts have a slightly different start/stop point for each run. This problem is not major but should be fixed.
