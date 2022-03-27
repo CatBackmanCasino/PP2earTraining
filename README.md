@@ -6,6 +6,9 @@ Oh, and it's also OK to play if you just want to play a fun game.
 
 Good luck!
 
+
+[Link to live game](https://catbackmancasino.github.io/PP2earTraining/)
+
 ![Responsive Mock up](assets/images/readmemedia/responsive.png)
 
 
