@@ -114,11 +114,9 @@ Other than that the game looks and acts as intended.
 ### Unfixed Bugs
 
 So far it has looked good on all physical devices. But on Chromes DevTools there seemst to be issues with the game-canvas height.
-
 One bug that a friend found is that on his, and only his macbook the game sometimes does not reset after the score modal. This bug i have not been able to reproduce.
 
-
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+The hearts running when a correct answer is submited are made using CSS and the JS runs and pauses the animation a set amount of time usinig setTimeout. This causes the loop not to be perfect and so the hearts have a slightly diffrent start/stop poinit for each run. This problem is not major but should be fixed.
 
 ## Deployment 
 
@@ -138,14 +136,18 @@ Stack Overflow CSS code to center absolute element:  https://stackoverflow.com/q
 Stina Caroline Axelsson - testinig
 Brian Macharia - Idea inspiration
 Bim Williams - Guidence in audio and arrays
+Danuta Bäckman - testing
+Rille Wahlström - Testing
+Svursten Donk - Testinig
+Isabella Bäckman - Testing
+Robin Rodriguez - Testing
 
 ### Content 
 
-font awesone
-google fonts
+Icons by Font Awesone
+Fonts by Google Fonts
 
 ### Media
-
 Background photo - Stenway Pianos
-Samples - Native instruments
+Piano Samples - Native instruments
 Mockup image - http://ami.responsivedesign.is/
